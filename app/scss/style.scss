@@ -30,6 +30,11 @@ html, body {
   margin-left: 20px;
   outline: none;
   cursor: pointer;
+  &.new-game {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
 }
 .green {
   background: rgb(0, 148, 74) !important;
