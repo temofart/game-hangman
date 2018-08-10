@@ -1,0 +1,36 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #eaeaff;
+  font-family: 'Open Sans'
+}
+.container {
+  text-align: center;
+}
+.main-word {
+  font-size: 30px;
+}
+.input {
+  width: 100px;
+  border: 0;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 20px 0;
+  outline: none;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.button {
+  background-color: rgb(25, 6, 190);
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-left: 20px;
+  outline: none;
+  cursor: pointer;
+}
+.green {
+  background: rgb(0, 148, 74) !important;
+}
