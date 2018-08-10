@@ -1,14 +1,19 @@
-html, body {
+@import url('https://fonts.googleapis.com/css?family=Neucha&subset=cyrillic');
+
+* {
   margin: 0;
   padding: 0;
+  font-family: 'Neucha', cursive;
+}
+html {
   background: #eaeaff;
-  font-family: 'Open Sans'
+  padding: 20px;
 }
 .container {
   text-align: center;
 }
 .main-word {
-  font-size: 30px;
+  font-size: 32px;
 }
 .input {
   width: 100px;
@@ -30,6 +35,8 @@ html, body {
   margin-left: 20px;
   outline: none;
   cursor: pointer;
+  border: 0;
+
   &.new-game {
     display: block;
     margin: 0 auto;
@@ -38,4 +45,7 @@ html, body {
 }
 .green {
   background: rgb(0, 148, 74) !important;
+}
+.red {
+  background-color: red !important;
 }

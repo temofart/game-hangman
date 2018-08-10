@@ -1,9 +1,7 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var connect = require('gulp-connect');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const connect = require('gulp-connect');
 
 gulp.task('connect', function(){
   connect.server({
@@ -16,6 +14,10 @@ gulp.task('connect', function(){
 gulp.task('sass', function () {
   return gulp.src('./app/scss/*.scss')
       .pipe(sass({ errLogToConsole: true }))
+      .pipe(autoprefixer({
+          browsers: ['last 2 versions'],
+          cascade: false
+      }))
       .pipe(gulp.dest('./app/css'));
 });
 
