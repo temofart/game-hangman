@@ -32,7 +32,7 @@ html, body {
     position: absolute;
     width: 0px;
     top: 0;
-    left: 39px;
+    left: 6%;
     bottom: 0;
     border-left: 1px solid #F8D3D3;
   }
@@ -54,8 +54,12 @@ html, body {
     font-size: 3.2rem;
   }
 
+  .man-dead {
+    display: none;
+  }
+
   .input {
-    width: 100px;
+    width: 80px;
     border: 0;
     padding: 10px;
     margin: 20px 0;
@@ -91,5 +95,12 @@ html, body {
 
   .red {
     background-color: red !important;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+  .visible {
+    display: block !important;
   }
 }

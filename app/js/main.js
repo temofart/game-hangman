@@ -1,7 +1,5 @@
 window.onload = function() {
   let playBtn = document.getElementById('startPlay')
-  let attempsHtml = document.getElementById('attemps')
-
   playBtn.addEventListener('click', startGame)
 
   function startGame() {
@@ -13,9 +11,42 @@ window.onload = function() {
       result[j] = " _ "
     }
 
-    let attemps = []
-    for (let a = 0; a < 10; a++) {
-      attemps[a] = '|'
+    let manDead = document.querySelectorAll('.man-dead')
+    function manLife(life) {
+      if (life == true) {
+        for(let m = 0; m < manDead.length; m++) {
+          manDead[m].classList.remove('visible')
+          manDead[m].classList.add('hidden')
+        }
+      }
+      if (life == false) {
+        for(let m = 0; m < manDead.length; m++) {
+          manDead[m].classList.remove('hidden')
+          manDead[m].classList.add('visible')
+        }
+      }
+    }
+
+    let man = document.querySelectorAll('.man')
+    let manLength = man.length - 1
+    function clearMan() {
+      while(manLength != -1) {
+        man[manLength].classList.remove('visible')
+        man[manLength].classList.add('hidden')
+        manLength--
+      }
+    }
+    clearMan()
+
+    let mistakes = 6
+
+    function removeItem() {
+      let classItem = '.man-' + mistakes
+      let manItem = document.querySelector(classItem)
+      if (mistakes != 1) {
+        manItem.classList.remove('hidden')
+        manItem.classList.add('visible')
+      }
     }
 
     let getValue
@@ -34,7 +65,6 @@ window.onload = function() {
     submit.classList.remove('red')
     submit.innerText = "Проверить"
     userInput.focus()
-    attempsHtml.innerText = attemps.join(' ')
 
     submit.onclick = function() {
       userInput.focus()
@@ -61,8 +91,8 @@ window.onload = function() {
           wordOutput.innerHTML = result.join('')
         }
         else {
-          attemps.pop()
-          attempsHtml.innerText = attemps.join(' ')
+          removeItem()
+          mistakes--
         }
 
         userInput.value = ""
@@ -73,17 +103,24 @@ window.onload = function() {
             submit.classList.add('green')
           }, 200)
         }
-        else if (attemps.length === 0) {
+        else if (mistakes === 0) {
           setTimeout(function() {
             wordOutput.innerHTML = 'Проиграл!'
             submit.classList.add('red')
+            manLife(true)
+            let manHead = document.querySelectorAll('.man-1')
+            for (let g = 0; g < manHead.length; g++) {
+              manHead[g].classList.remove('hidden')
+              manHead[g].classList.add('visible')
+            }
           }, 200)
         }
-        if (countLetters === 0 || attemps.length === 0){
+        if (countLetters === 0 || mistakes === 0){
           setTimeout(function() {
             submit.innerText = "Еще разок?"
             submit.onclick = function() {
               startGame()
+              clearMan()
             }
           }, 200)
         }

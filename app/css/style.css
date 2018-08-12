@@ -34,7 +34,7 @@ html, body {
     position: absolute;
     width: 0px;
     top: 0;
-    left: 39px;
+    left: 6%;
     bottom: 0;
     border-left: 1px solid #F8D3D3; }
   .container .title {
@@ -47,8 +47,10 @@ html, body {
       margin-right: 2rem; }
   .container .main-word {
     font-size: 3.2rem; }
+  .container .man-dead {
+    display: none; }
   .container .input {
-    width: 100px;
+    width: 80px;
     border: 0;
     padding: 10px;
     margin: 20px 0;
@@ -76,3 +78,7 @@ html, body {
     background: #00944a !important; }
   .container .red {
     background-color: red !important; }
+  .container .hidden {
+    display: none !important; }
+  .container .visible {
+    display: block !important; }
