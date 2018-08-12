@@ -7,10 +7,13 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Виселица</h1>
+		<h1 class="title">Виселица</h1>
 		<section class="workspace">
-			<h2>Угадай слово:</h2>
-			<div id="wordOutput" class="main-word"></div>
+			<div class="guess-word flex-row">
+				<h2 class="guess-word-title">Угадай слово:</h2>
+				<div id="wordOutput" class="main-word"></div>
+			</div>
+
 			<div id="attemps" class="attemps"></div>
 			<input type="text" id="inputWord" class="input">
 			<button id="submit" class="button">Проверить</button>

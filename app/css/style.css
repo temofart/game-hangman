@@ -4,44 +4,75 @@
   padding: 0;
   font-family: 'Neucha', cursive; }
 
-html {
-  background: #eaeaff;
-  padding: 20px; }
+html, body {
+  height: 100%;
+  font-size: 10px; }
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .container {
+  background: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(#DFE8EC), color-stop(8%, white)) 0 57px;
+  background: linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+  background-size: 100% 30px;
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
   text-align: center; }
-
-.main-word {
-  font-size: 32px; }
-
-.input {
-  width: 100px;
-  border: 0;
-  border-radius: 4px;
-  padding: 20px;
-  margin: 20px 0;
-  outline: none;
-  font-size: 30px;
-  text-align: center;
-  text-transform: uppercase; }
-
-.button {
-  background-color: #1906be;
-  color: #fff;
-  font-size: 16px;
-  border-radius: 4px;
-  padding: 10px 20px;
-  margin-left: 20px;
-  outline: none;
-  cursor: pointer;
-  border: 0; }
-  .button.new-game {
-    display: block;
-    margin: 0 auto;
-    margin-top: 20px; }
-
-.green {
-  background: #00944a !important; }
-
-.red {
-  background-color: red !important; }
+  .container::after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    top: 0;
+    left: 39px;
+    bottom: 0;
+    border-left: 1px solid #F8D3D3; }
+  .container .title {
+    font-size: 5rem;
+    padding-top: 4rem; }
+  .container .guess-word {
+    margin: 2rem 0; }
+    .container .guess-word-title {
+      font-size: 3rem;
+      margin-right: 2rem; }
+  .container .main-word {
+    font-size: 3.2rem; }
+  .container .input {
+    width: 100px;
+    border: 0;
+    padding: 10px;
+    margin: 20px 0;
+    outline: none;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    background: transparent;
+    border-bottom: 3px solid red; }
+  .container .button {
+    background-color: #1906be;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-left: 20px;
+    outline: none;
+    cursor: pointer;
+    border: 0; }
+    .container .button.new-game {
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px; }
+  .container .green {
+    background: #00944a !important; }
+  .container .red {
+    background-color: red !important; }
