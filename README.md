@@ -1,2 +1,2 @@
 # game-hangman
-The Game 'Hang-Man' writing on Javascript.
+The Game 'Hang-Man' written on Javascript.
